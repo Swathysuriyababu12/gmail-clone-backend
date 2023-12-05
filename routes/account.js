@@ -8,7 +8,7 @@ const express = require("express"); ;
   register,
   login,
   getUser,
-  updateProfilePicture,
+  //updateProfilePicture,
 } =require ("../controllers/account.js"); 
 
 
@@ -16,8 +16,8 @@ const router = express.Router();
 
 
 router.post("/register", [...registerValidations], register);
-router.post("/login", [...loginValidations], login);
-router.get("/", authenticateToken, getUser);
-router.put("/image", authenticateToken, updateProfilePicture);
+ router.post("/login", [...loginValidations], login);
+ router.get("/", authenticateToken, getUser);
+// router.put("/image", authenticateToken, updateProfilePicture);
 
 module.exports=router;
