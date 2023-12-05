@@ -4,7 +4,8 @@ const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const cors = require("cors");
-const mail=require("./routes/mail")
+const mail = require("./routes/mail");
+const accountRoutes=require("./routes/account")
 
 connectDB();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
+app.use("/account", accountRoutes);
 app.use("/", mail);
 
 app.use(errorHandler);
