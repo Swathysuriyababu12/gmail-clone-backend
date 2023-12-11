@@ -11,10 +11,10 @@ const userSchema = new mongoose.Schema(
     },
     profilePicture: String,
     mailbox: {
-      inbox: [{ type: mongoose.Schema.Types.ObjectId, ref: "Email" }],
-      outbox: [{ type: mongoose.Schema.Types.ObjectId, ref: "Email" }],
-      drafts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Email" }],
-      trash: [{ type: mongoose.Schema.Types.ObjectId, ref: "Email" }],
+      inbox: [{ type: mongoose.Schema.Types.ObjectId, ref: "Mails" }],
+      outbox: [{ type: mongoose.Schema.Types.ObjectId, ref: "Mails" }],
+      drafts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Mails" }],
+      trash: [{ type: mongoose.Schema.Types.ObjectId, ref: "Mails" }],
     },
   },
   {

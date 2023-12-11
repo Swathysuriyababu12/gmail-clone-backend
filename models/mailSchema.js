@@ -2,48 +2,25 @@ const mongoose=require("mongoose")
 
 const mailSchema = mongoose.Schema(
   {
-    to: {
-      type: String,
-      required: true,
-    },
     from: {
       type: String,
       required: true,
     },
-    subject: {
-      type: String,
-    },
-    body: {
-      type: String,
-    },
-    date: {
-      type: Date,
-      required: true,
-    },
-    image: {
-      type: String,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    starred: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
-    bin: {
+    to: String,
+    subject: String,
+    message: String,
+    read: {
       type: Boolean,
       default: false,
     },
-    type: {
-      type: String,
-      required: true,
+    favorite: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }
 );
 
-const Mail = mongoose.model("Mails", mailSchema);
+const Email = mongoose.model("Mails", mailSchema);
 
-module.exports = Mail;
+module.exports = Email;
